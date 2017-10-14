@@ -20,6 +20,20 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var greyscale: UISlider!
+    @IBOutlet weak var redscale: UISlider!
+    @IBOutlet weak var greenscale: UISlider!
+    @IBOutlet weak var bluescale: UISlider!
+    
+    @IBAction func greyScaleAction(_ sender: UISlider) {
+        view.backgroundColor = UIColor(white: CGFloat(sender.value), alpha: 1)
+    }
+    @IBAction func rgbScaleAction(_ sender: Any) {
+        let red = redscale.value;
+        let green = greenscale.value;
+        let blue = bluescale.value;
+        view.backgroundColor = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1)
+    }
 
 }
 
